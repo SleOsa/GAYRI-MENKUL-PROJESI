@@ -1,0 +1,569 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>www.ozkayagayrimenkul.com</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f5f1e8;
+            font-family: "Trebuchet MS", sans-serif;
+        }
+
+
+        /* =========================
+           BAŞLIK
+        ========================= */
+
+        h1 {
+            text-align: center;
+            color: #b08d57;
+            font-size: 42px;
+            letter-spacing: 2px;
+            margin: 30px 0 10px;
+        }
+
+
+        /* =========================
+           MENÜ
+        ========================= */
+
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #b08d57;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #b08d57;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #333;
+        }
+
+
+        /* =========================
+           AÇIKLAMA
+        ========================= */
+
+        .aciklama {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px auto 40px;
+            max-width: 800px;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+
+        /* =========================
+           İLANLAR
+        ========================= */
+
+        .ilanlar {
+            display: flex;
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+            align-items: flex-start;
+        }
+
+        .ilan {
+            background-color: white;
+            padding: 25px;
+            flex: 1;
+            border-radius: 15px;
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           İLAN RESİMLERİ
+        ========================= */
+
+        .ilan img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+
+        .ilan h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .ilan h3 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           ÖZELLİKLER
+        ========================= */
+
+        .ozellikler {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .ozellikler div {
+            background-color: #f5f1e8;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           FİYAT
+        ========================= */
+
+        .fiyat {
+            font-weight: bold;
+            font-size: 20px;
+            color: #b08d57;
+        }
+
+
+        /* =========================
+           İLAN BUTONU
+        ========================= */
+
+        .ilan a {
+            display: inline-block;
+            background-color: #b08d57;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .ilan a:hover {
+            background-color: #333;
+        }
+
+
+        /* ==================================================
+           DETAY ALANLARI
+           
+           Her detay kendi ekran yüksekliğinde bir alan.
+           Böylece diğer detaylar aynı anda görünmez.
+        ================================================== */
+
+        .detay-sayfa {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+            padding: 80px 20px;
+        }
+
+
+        /* =========================
+           DETAY KUTUSU
+        ========================= */
+
+        .detay {
+            width: 100%;
+            max-width: 900px;
+
+            background-color: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0px 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .detay h2 {
+            text-align: center;
+            color: #b08d57;
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .detay p {
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .detay li {
+            line-height: 2;
+            border-bottom: 1px solid #eee;
+        }
+
+
+        /* =========================
+           İLETİŞİM
+        ========================= */
+
+        #iletisim {
+            text-align: center;
+            color: #b08d57;
+            margin-top: 60px;
+        }
+
+        #iletisim + p,
+        #iletisim + p + p,
+        #iletisim + p + p + p {
+            text-align: center;
+        }
+
+
+        /* =========================
+           TABLET / TELEFON
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .ilanlar {
+                flex-direction: column;
+            }
+
+            .ilan {
+                width: 100%;
+            }
+
+            .detay-sayfa {
+                padding: 50px 20px;
+            }
+
+            .detay {
+                padding: 30px;
+            }
+        }
+
+
+        @media (max-width: 900px) {
+
+            .ilanlar {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .ilan {
+                padding: 20px;
+            }
+
+            .ilan img {
+                height: 220px;
+            }
+
+            .detay {
+                padding: 25px;
+            }
+
+            .detay-sayfa {
+                padding: 40px 15px;
+            }
+        }
+.detay-sayfa {
+    display: none;
+    min-height: 100vh;
+    padding: 80px 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.detay-sayfa.aktif {
+    display: flex;
+}
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HAKKIMIZDA
+    ========================= -->
+
+    <h1 id="hakkimizda">
+        HAKKIMIZDA
+    </h1>
+
+
+    <!-- =========================
+         MENÜ
+    ========================= -->
+
+    <nav>
+
+        <a href="#">
+            Ana Sayfa
+        </a>
+
+        |
+
+        <a href="#hakkimizda">
+            Hakkımızda
+        </a>
+
+        |
+
+        <a href="#ilanlar">
+            İlanlar
+        </a>
+
+        |
+
+        <a href="#iletisim">
+            İletişim
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         AÇIKLAMA
+    ========================= -->
+
+    <p class="aciklama">
+            Ozkaya Gayrimenkul olarak hayallerinizdeki evlere kavuşmanız için profesyonel ekibimizle hizmetinizdeyiz.
+</p>
+
+<div class="ilanlar" id="ilanlar">
+
+    <div class="ilan">
+
+        <h2>SATILIK GAYRİMENKULLER</h2>
+
+        <img src="ev1.jpg" alt="Kocaeli Bahçeli Villa">
+
+        <h3>Kocaeli Bahçeli Villa</h3>
+
+        <div class="ozellikler">
+            <div>250 m²</div>
+            <div>4+1 Oda</div>
+            <div>2 Banyo</div>
+            <div>70 m² Bahçe</div>
+        </div>
+
+        <p class="fiyat">
+            Fiyat: 1.500.000 TL
+        </p>
+
+        <a href="#detay">
+            İlanı İncele
+        </a>
+
+    </div>
+
+
+    <div class="ilan">
+
+        <img src="ev2.jpg" alt="İstanbul Beşiktaş Bahçeli Villa">
+
+        <h3>İstanbul Beşiktaş Bahçeli Villa</h3>
+
+        <div class="ozellikler">
+            <div>300 m²</div>
+            <div>5+1 Oda</div>
+            <div>3 Banyo</div>
+            <div>100 m² Bahçe</div>
+        </div>
+
+        <p class="fiyat">
+            Fiyat: 2.500.000 TL
+        </p>
+
+        <a href="#detay2">
+            İlanı İncele
+        </a>
+
+    </div>
+
+
+    <div class="ilan">
+
+        <img src="ev3.jpg" alt="İzmir Çeşme Bahçeli Villa">
+
+        <h3>İzmir Çeşme Bahçeli Villa</h3>
+
+        <div class="ozellikler">
+            <div>350 m²</div>
+            <div>6+1 Oda</div>
+            <div>4 Banyo</div>
+            <div>150 m² Bahçe</div>
+        </div>
+
+        <p class="fiyat">
+            Fiyat: 3.000.000 TL
+        </p>
+
+        <a href="#detay3">
+            İlanı İncele
+        </a>
+
+    </div>
+
+</div>
+
+
+<section class="detay-sayfa" id="detay">
+
+    <div class="detay">
+
+        <h2>Kocaeli Bahçeli Villa</h2>
+
+        <p>
+            Bu Kocaeli Bahçeli Villa, modern tasarımı ve geniş yaşam alanları ile dikkat çekiyor.
+            4+1 oda düzeni, 2 banyo ve 70 m² bahçe alanı ile aileler için ideal bir yaşam alanı sunuyor.
+        </p>
+
+        <ul>
+            <li>Isıtma: Merkezi Isıtma</li>
+            <li>Otopark: 2 Araçlık Kapalı Otopark</li>
+            <li>Balkon: 2 Balkon</li>
+            <li>Yıl: 2020</li>
+            <li>Eşyalı: Hayır</li>
+            <li>Konum: Kocaeli</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<section class="detay-sayfa" id="detay2">
+
+    <div class="detay">
+
+        <h2>İstanbul Beşiktaş Bahçeli Villa</h2>
+
+        <p>
+            Bu İstanbul Beşiktaş Bahçeli Villa, modern tasarımı ve geniş yaşam alanları ile dikkat çekiyor.
+            5+1 oda düzeni, 3 banyo ve 100 m² bahçe alanı ile aileler için ideal bir yaşam alanı sunuyor.
+        </p>
+
+        <ul>
+            <li>Isıtma: Merkezi Isıtma</li>
+            <li>Otopark: 2 Araçlık Kapalı Otopark</li>
+            <li>Balkon: 2 Balkon</li>
+            <li>Yıl: 2020</li>
+            <li>Eşyalı: Hayır</li>
+            <li>Konum: İstanbul</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<section class="detay-sayfa" id="detay3">
+
+    <div class="detay">
+
+        <h2>İzmir Çeşme Bahçeli Villa</h2>
+
+        <p>
+            Bu İzmir Çeşme Bahçeli Villa, modern tasarımı ve geniş yaşam alanları ile dikkat çekiyor.
+            6+1 oda düzeni, 4 banyo ve 150 m² bahçe alanı ile aileler için ideal bir yaşam alanı sunuyor.
+        </p>
+
+        <ul>
+            <li>Isıtma: Merkezi Isıtma</li>
+            <li>Otopark: 2 Araçlık Kapalı Otopark</li>
+            <li>Balkon: 2 Balkon</li>
+            <li>Yıl: 2020</li>
+            <li>Eşyalı: Hayır</li>
+            <li>Konum: İzmir</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+<h2 id="iletisim">
+    İLETİŞİM
+</h2>
+
+<p>Adres: Kocaeli, Türkiye</p>
+<p>Telefon: +90 123 456 7890</p>
+<p>Email: info@ozkayagayrimenkul.com</p>
+
+
+<script>
+
+    document.querySelectorAll('.ilan a').forEach(function(link) {
+
+        link.addEventListener('click', function(e) {
+
+            e.preventDefault();
+
+            // Bütün detayları gizle
+            document.querySelectorAll('.detay-sayfa').forEach(function(detay) {
+                detay.classList.remove('aktif');
+            });
+
+            // Tıklanan ilanın detayını bul
+            const hedef = document.querySelector(
+                this.getAttribute('href')
+            );
+
+            if (!hedef) return;
+
+            // Sadece tıklanan detayı göster
+            hedef.classList.add('aktif');
+
+            // Detaya yumuşak şekilde git
+            const hedefKonum =
+                hedef.getBoundingClientRect().top +
+                window.scrollY;
+
+            window.scrollTo({
+                top: hedefKonum,
+                behavior: 'smooth'
+            });
+
+        });
+
+    });
+
+</script>
+</body>
+
+</html>
+
