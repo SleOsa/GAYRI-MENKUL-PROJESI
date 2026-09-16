@@ -40,4 +40,4 @@ Ozkaya-Gayrimenkul/
 
 ---
 
-**Geliştirici:** Emir Özkaya
+**Geliştirici:** Emir Özkaya  
